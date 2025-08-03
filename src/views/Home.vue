@@ -47,7 +47,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref, computed, onMounted } from 'vue'
 import { usePokemonStore } from '../stores/pokemonStore'
 
