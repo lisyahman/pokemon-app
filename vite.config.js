@@ -4,9 +4,9 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
-// https://vite.dev/config/
+// vite.config.js
 export default defineConfig({
-  base: './', // ❗ Ini penting untuk Netlify deploy dengan betul
+  base: './', // penting!
   plugins: [vue(), vueDevTools()],
   resolve: {
     alias: {
