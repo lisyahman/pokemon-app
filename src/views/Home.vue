@@ -36,7 +36,7 @@
       >
         <div class="card hover-effect">
           <img :src="poke.image" class="card-img-top" alt="pokemon" />
-          <div class="card-body text-center">
+          <div class="card-body">
             <h6 class="card-title text-capitalize mb-0">{{ poke.name }}</h6>
           </div>
         </div>
@@ -165,7 +165,7 @@ input:focus {
   font-size: 1.1rem;
   font-weight: 700;
   color: #2c3e50;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.5px;
   transition: color 0.3s ease;
 }
 
