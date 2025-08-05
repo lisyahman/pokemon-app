@@ -10,20 +10,16 @@
     </h1>
 
     <!-- Seacrh -->
-    <div class="row justify-content-center mb-4">
-      <div class="col-md-10 col-lg-8">
-        <div class="input-group shadow-sm">
-          <span class="input-group-text bg-white border-end-0">
-            <i class="bi bi-search text-muted"></i>
-          </span>
-          <input
-            type="text"
-            class="form-control border-start-0"
-            placeholder="Search Pokémon by name..."
-            v-model="search"
-          />
-        </div>
-      </div>
+    <div class="input-group shadow-sm mb-4 mx-auto" style="max-width: 600px">
+      <span class="input-group-text bg-white border-end-0">
+        <i class="bi bi-search text-muted"></i>
+      </span>
+      <input
+        type="text"
+        class="form-control border-start-0"
+        placeholder="Search Pokémon..."
+        v-model="search"
+      />
     </div>
 
     <!-- List of Pokemon -->
