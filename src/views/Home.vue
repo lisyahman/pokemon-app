@@ -1,5 +1,5 @@
 <template>
-  <div class="container custom-container py-5 text-center">
+  <div class="container py-5 text-center">
     <!-- Title -->
     <h1 class="mb-4 fw-bold pokemon-heading">
       <img
@@ -27,17 +27,20 @@
     </div>
 
     <!-- List of Pokemon -->
-    <div class="row mt-4 justify-content-center">
-      <div class="col-12 col-sm-6 col-md-4 mb-4" v-for="poke in filteredPokemon" :key="poke.name">
-        <router-link :to="`/pokemon/${poke.name}`" class="text-decoration-none text-dark">
-          <div class="card h-100 shadow-sm border-0 hover-effect">
-            <img :src="poke.image" class="card-img-top p-3" alt="pokemon" />
-            <div class="card-body">
-              <h6 class="card-title text-capitalize text-center mb-0">{{ poke.name }}</h6>
-            </div>
+    <div class="pokemon-grid mt-4">
+      <router-link
+        v-for="poke in filteredPokemon"
+        :key="poke.name"
+        :to="`/pokemon/${poke.name}`"
+        class="pokemon-card text-decoration-none text-dark"
+      >
+        <div class="card hover-effect">
+          <img :src="poke.image" class="card-img-top" alt="pokemon" />
+          <div class="card-body text-center">
+            <h6 class="card-title text-capitalize mb-0">{{ poke.name }}</h6>
           </div>
-        </router-link>
-      </div>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -92,40 +95,89 @@ input:focus {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
+/* .hover-effect:hover {
+  transform: translateY(-6px) scale(1.03);
+} */
+
 .hover-effect:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 15px rgba(255, 203, 5, 0.5); /* yellow glow */
 }
 
 .card-img-top {
+  height: 140px;
   object-fit: contain;
-  height: 160px;
-  background-color: #f9f9f9;
-  border-radius: 1rem;
+  background-color: #f6f6f6;
+  padding: 1.2rem;
 }
+
+/* .card {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+} */
+
+/* .card {
+  border: none;
+  border-radius: 0.75rem;
+  background-color: #f5f5f5;
+  box-shadow: none;
+} */
 
 .card {
   border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+/* .card-body {
+  padding: 0.8rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+} */
+
+/* .card-body {
+  padding: 0.75rem;
+  background-color: #fdfdfd;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0;
+} */
+
 .card-body {
-  padding: 1rem;
+  padding: 1rem 0.5rem;
 }
 
 .card-title {
   font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
-}
-.card-title:hover {
-  color: #007bff;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
   transition: color 0.3s ease;
 }
-/* .custom-container {
-  border: 1px solid red;
-  max-width: 1400px;
-} */
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  justify-items: center;
+}
+
+.pokemon-card {
+  width: 100%;
+  max-width: 220px;
+}
 </style>
