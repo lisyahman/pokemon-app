@@ -107,10 +107,10 @@ input:focus {
 }
 
 .card-img-top {
-  height: 140px;
+  height: 80px;
   object-fit: contain;
   background-color: #f6f6f6;
-  padding: 1.2rem;
+  padding: 1rem;
 }
 
 /* .card {
@@ -162,7 +162,7 @@ input:focus {
 }
 
 .card-title {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: #2c3e50;
   letter-spacing: 1.5px;
@@ -171,8 +171,8 @@ input:focus {
 
 .pokemon-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
   justify-items: center;
 }
 
