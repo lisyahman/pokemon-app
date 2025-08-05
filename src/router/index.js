@@ -15,8 +15,13 @@ const router = createRouter({
       name: 'pokemon-detail',
       component: () => import('../views/PokemonDetail.vue'),
     },
+
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/AboutView.vue'),
+    },
   ],
 })
 
 export default router
-// testing comment
